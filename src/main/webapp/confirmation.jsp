@@ -15,19 +15,33 @@
 	<p></p>
 	<div class="container">
 		<div class="card">
+<<<<<<< HEAD
 			<div class="card-header">Confirmation Ajout Pc</div>
+=======
+			<div class="card-header">Confirmation Ajout Produit</div>
+>>>>>>> 53407e9 ( tp4 complet)
 			<div class="card-body">
 
 				<div class="form-group">
 					<label class="control-label">ID :</label> <input type="text"
+<<<<<<< HEAD
 						name="Nom" class="form-control" value="${pc.idPc }" /> <label
 						class="control-label">Nom Pc :</label> <input type="text"
 						name="Nom" class="form-control" value="${pc.nomPc }" />
+=======
+						name="Nom" class="form-control" value="${produit.idProduit }" /> <label
+						class="control-label">Nom Produit :</label> <input type="text"
+						name="Nom" class="form-control" value="${produit.nomProduit }" />
+>>>>>>> 53407e9 ( tp4 complet)
 				</div>
 
 				<div class="control-label">
 					<label class="control-label">Prix :</label> <input type="text"
+<<<<<<< HEAD
 						name="Prix" class="form-control" value="${pc.prix }" />
+=======
+						name="Prix" class="form-control" value="${produit.prix }" />
+>>>>>>> 53407e9 ( tp4 complet)
 				</div>
 			</div>
 
