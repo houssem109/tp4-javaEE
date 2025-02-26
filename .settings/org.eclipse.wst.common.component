@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-<<<<<<< HEAD
             
     
     <wb-module deploy-name="TP3_JEE">
@@ -18,18 +17,4 @@
     </wb-module>
         
 
-=======
-        
-    <wb-module deploy-name="TP3_JEE">
-                
-        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-                
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-                
-        <property name="java-output-path" value="/TP3_JEE/build/classes"/>
-        <property name="context-root" value="TP4_JEE"/>
-            
-    </wb-module>
-    
->>>>>>> 53407e9 ( tp4 complet)
 </project-modules>

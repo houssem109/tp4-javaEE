@@ -8,11 +8,7 @@ public class SingletonConnection {
 	static {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-<<<<<<< HEAD
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_MVC_PC", "root", "");
-=======
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_MVC_CAT", "root", "");
->>>>>>> 53407e9 ( tp4 complet)
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
