@@ -17,7 +17,7 @@
 	<p></p>
 	<div class="container">
 		<div class="card">
-			<div class="card-header">Recherche des Produits</div>
+			<div class="card-header">Recherche des Pcs</div>
 			<div class="card-body">
 				<form action="chercher.do" method="get">
 					<label>Mot Clé</label> <input type="text" name="motCle"
@@ -27,17 +27,17 @@
 				<table class="table table-striped">
 					<tr>
 						<th>ID</th>
-						<th>Nom Produit</th>
+						<th>Nom Pc</th>
 						<th>Prix</th>
 					</tr>
-					<c:forEach items="${model.produits}" var="p">
+					<c:forEach items="${model.pcs}" var="p">
 						<tr>
-							<td>${p.idProduit }</td>
-							<td>${p.nomProduit }</td>
+							<td>${p.idPc }</td>
+							<td>${p.nomPc}</td>
 							<td>${p.prix }</td>
 							<td><a onclick="return confirm('Etes-vous sûr ?')"
-								href="supprimer.do?id=${p.idProduit }">Supprimer</a></td>
-							<td><a href="editer.do?id=${p.idProduit }">Edit</a></td>
+								href="supprimer.do?id=${p.idPc }">Supprimer</a></td>
+							<td><a href="editer.do?id=${p.idPc }">Edit</a></td>
 
 						</tr>
 					</c:forEach>

@@ -15,22 +15,22 @@
 	<p></p>
 	<div class="container">
 		<div class="card">
-			<div class="card-header">Modification des Produits</div>
+			<div class="card-header">Modification des Pcs</div>
 			<div class="card-body">
 				<form action="update.do" method="post">
 					<div class="form-group">
-						<label class="control-label">ID Produit :</label> <input
+						<label class="control-label">ID Pc :</label> <input
 							type="text" name="id" class="form-control" readonly
-							value="${produit.idProduit}" />
+							value="${pc.idPc}" />
 					</div>
 					<div class="form-group">
-						<label class="control-label">Nom Produit :</label> <input
+						<label class="control-label">Nom Pc :</label> <input
 							type="text" name="nom" class="form-control"
-							value="${produit.nomProduit}" />
+							value="${pc.nomPc}" />
 					</div>
 					<div class="form-group">
 						<label class="control-label">Prix :</label> <input type="text"
-							name="prix" class="form-control" value="${produit.prix}" />
+							name="prix" class="form-control" value="${pc.prix}" />
 					</div>
 					<div>
 						<button type="submit" class="btn btn-primary">Modifier</button>

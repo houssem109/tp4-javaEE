@@ -15,19 +15,19 @@
 	<p></p>
 	<div class="container">
 		<div class="card">
-			<div class="card-header">Confirmation Ajout Produit</div>
+			<div class="card-header">Confirmation Ajout Pc</div>
 			<div class="card-body">
 
 				<div class="form-group">
 					<label class="control-label">ID :</label> <input type="text"
-						name="Nom" class="form-control" value="${produit.idProduit }" /> <label
-						class="control-label">Nom Produit :</label> <input type="text"
-						name="Nom" class="form-control" value="${produit.nomProduit }" />
+						name="Nom" class="form-control" value="${pc.idPc }" /> <label
+						class="control-label">Nom Pc :</label> <input type="text"
+						name="Nom" class="form-control" value="${pc.nomPc }" />
 				</div>
 
 				<div class="control-label">
 					<label class="control-label">Prix :</label> <input type="text"
-						name="Prix" class="form-control" value="${produit.prix }" />
+						name="Prix" class="form-control" value="${pc.prix }" />
 				</div>
 			</div>
 
