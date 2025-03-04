@@ -8,7 +8,7 @@ public class SingletonConnection {
 	static {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_MVC_CAT", "root", "");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_MVC_PC", "root", "");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

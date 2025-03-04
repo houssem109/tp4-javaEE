@@ -6,21 +6,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import metier.entities.Produit;
 
-public class ProduitDaoImpl implements IProduitDao {
+import pc.entities.Pc;
+
+public class PcDaoImpl implements IPcDao {
 	@Override
-	public Produit save(Produit p) {
+	public Pc save(Pc p) {
 		Connection conn = SingletonConnection.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("INSERT INTO PRODUITS(NOM_PRODUIT,PRIX) VALUES(?,?)");
-			ps.setString(1, p.getNomProduit());
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO PCS(NOM_PC,PRIX) VALUES(?,?)");
+			ps.setString(1, p.getNomPc());
 			ps.setDouble(2, p.getPrix());
 			ps.executeUpdate();
-			PreparedStatement ps2 = conn.prepareStatement("SELECT MAX(ID_PRODUIT) as MAX_ID FROM PRODUITS");
+			PreparedStatement ps2 = conn.prepareStatement("SELECT MAX(ID_PC) as MAX_ID FROM PCS");
 			ResultSet rs = ps2.executeQuery();
 			if (rs.next()) {
-				p.setIdProduit(rs.getLong("MAX_ID"));
+				p.setIdPc(rs.getLong("MAX_ID"));
 			}
 			ps.close();
 			ps2.close();
@@ -31,17 +32,17 @@ public class ProduitDaoImpl implements IProduitDao {
 	}
 
 	@Override
-	public List<Produit> produitsParMC(String mc) {
-		List<Produit> prods = new ArrayList<Produit>();
+	public List<Pc> pcsParMC(String mc) {
+		List<Pc> prods = new ArrayList<Pc>();
 		Connection conn = SingletonConnection.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("select * from PRODUITS where NOM_PRODUIT LIKE ?");
+			PreparedStatement ps = conn.prepareStatement("select * from PCS where NOM_PC LIKE ?");
 			ps.setString(1, "%" + mc + "%");
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				Produit p = new Produit();
-				p.setIdProduit(rs.getLong("ID_PRODUIT"));
-				p.setNomProduit(rs.getString("NOM_PRODUIT"));
+				Pc p = new Pc();
+				p.setIdPc(rs.getLong("ID_PC"));
+				p.setNomPc(rs.getString("NOM_PC"));
 				p.setPrix(rs.getDouble("PRIX"));
 				prods.add(p);
 			}
@@ -52,17 +53,17 @@ public class ProduitDaoImpl implements IProduitDao {
 	}
 
 	@Override
-	public Produit getProduit(Long id) {
+	public Pc getPc(Long id) {
 
 		Connection conn = SingletonConnection.getConnection();
-		Produit p = new Produit();
+		Pc p = new Pc();
 		try {
-			PreparedStatement ps = conn.prepareStatement("select * from PRODUITS where ID_PRODUIT = ?");
+			PreparedStatement ps = conn.prepareStatement("select * from PCS where ID_PC = ?");
 			ps.setLong(1, id);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				p.setIdProduit(rs.getLong("ID_PRODUIT"));
-				p.setNomProduit(rs.getString("NOM_PRODUIT"));
+				p.setIdPc(rs.getLong("ID_PC"));
+				p.setNomPc(rs.getString("NOM_PC"));
 				p.setPrix(rs.getDouble("PRIX"));
 			}
 		} catch (SQLException e) {
@@ -72,13 +73,13 @@ public class ProduitDaoImpl implements IProduitDao {
 	}
 
 	@Override
-	public Produit updateProduit(Produit p) {
+	public Pc updatePc(Pc p) {
 		Connection conn = SingletonConnection.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("UPDATE PRODUITS SET NOM_PRODUIT=?,PRIX=? WHERE ID_PRODUIT=?");
-			ps.setString(1, p.getNomProduit());
+			PreparedStatement ps = conn.prepareStatement("UPDATE PCS SET NOM_PC=?,PRIX=? WHERE ID_PC=?");
+			ps.setString(1, p.getNomPc());
 			ps.setDouble(2, p.getPrix());
-			ps.setLong(3, p.getIdProduit());
+			ps.setLong(3, p.getIdPc());
 			ps.executeUpdate();
 			ps.close();
 		} catch (SQLException e) {
@@ -88,10 +89,10 @@ public class ProduitDaoImpl implements IProduitDao {
 	}
 
 	@Override
-	public void deleteProduit(Long id) {
+	public void deletePc(Long id) {
 		Connection conn = SingletonConnection.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("DELETE FROM PRODUITS WHERE ID_PRODUIT = ?");
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM PCS WHERE ID_PC = ?");
 			ps.setLong(1, id);
 			ps.executeUpdate();
 			ps.close();
