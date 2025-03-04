@@ -22,7 +22,7 @@
 				<form action="chercher.do" method="get">
 					<label>Mot Clé</label> <input type="text" name="motCle"
 						value="${model.motCle}" />
-					<button type="submit" class="btn btn-primary">Chercher</button>
+					<button type="submit" class="btn btn-primary">Chercher Produit</button>
 				</form>
 				<table class="table table-striped">
 					<tr>
